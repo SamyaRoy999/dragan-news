@@ -1,12 +1,15 @@
 import user from "../../assets/user.png"
-
+import {Link} from 'react-router-dom'
 const Nabebar = () => {
     const linkNav = <>
-        <li><a>Submenu 1</a></li>
-        <li><a>Submenu 2</a></li>
+    <li><Link to=''>Home  </Link></li>
+    <li><Link to=''>About</Link></li>
+    <li><Link to=''>Career</Link></li>
+    <li><Link to='/login'>Login</Link></li>
+       
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 my-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

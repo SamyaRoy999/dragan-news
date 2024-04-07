@@ -52,7 +52,7 @@ const RightSideNav = () => {
                 <div className="relative z-10 my-16 px-5 flex flex-col justify-center items-center h-full text-center">
                     <h1 className="text-3xl font-bold leading-tight mb-4">Create an Amazing Newspaper</h1>
                     <p className="text-lg text-gray-300 mb-8">Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
-                    <a href="#" className="bg-[#D72050] text-white hover:bg-yellow-300 py-2 px-6  text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Learn More</a>
+                    <a href="#" className="bg-[#D72050] text-white hover:bg-gray-300 py-2 px-6  text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Learn More</a>
                 </div>
             </div>
 

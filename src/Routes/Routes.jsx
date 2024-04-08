@@ -3,6 +3,7 @@ import Layouts from "../Layouts/Layouts";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import SinglePages from "../Pages/SinglePages";
 
 export const router = createBrowserRouter([
     {
@@ -11,7 +12,12 @@ export const router = createBrowserRouter([
       children: [
         {
             path: '/',
-            element: <Home/>
+            element: <Home/>,
+            loader: ()=> fetch('/data/news.json')
+        },
+        {
+          path: "/singlePage/:id",
+          element: <SinglePages/>
         },
         {
             path: '/login',

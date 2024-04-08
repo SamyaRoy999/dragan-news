@@ -1,12 +1,17 @@
-import user from "../../assets/user.png"
-import {Link} from 'react-router-dom'
+import { useContext } from "react"
+import userImg from "../../assets/user.png"
+import { Link } from 'react-router-dom'
+import { AuthContext } from "../../Provider/AuthProvider"
 const Nabebar = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+
     const linkNav = <>
-    <li><Link to=''>Home  </Link></li>
-    <li><Link to=''>About</Link></li>
-    <li><Link to=''>Career</Link></li>
-    <li><Link to='/login'>Login</Link></li>
-       
+        <li><Link to='/'>Home  </Link></li>
+        <li><Link to=''>About</Link></li>
+        <li><Link to=''>Career</Link></li>
+        <li><Link to='/login'>Login</Link></li>
+
     </>
     return (
         <div className="navbar bg-base-100 my-10">
@@ -19,7 +24,7 @@ const Nabebar = () => {
                         {linkNav}
                     </ul>
                 </div>
-                
+
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -29,10 +34,13 @@ const Nabebar = () => {
             <div className="navbar-end">
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle  avatar">
                     <div className="w-10 rounded-full">
-                        <img alt="Tailwind CSS Navbar component" src={user} />
+                        <img alt="Tailwind CSS Navbar component" src={userImg} />
                     </div>
                 </div>
-                <a className="btn bg-[#403F3F] text-xl font-bold text-white">Login</a>
+                {user ? <button onClick={()=> logOut()} className="btn bg-[#403F3F] text-xl font-bold text-white">Loge out</button>
+
+                    : <Link to='/login' className="btn bg-[#403F3F] text-xl font-bold text-white">Login</Link>
+                }
             </div>
         </div>
     )

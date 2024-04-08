@@ -1,18 +1,23 @@
 import { Link } from "react-router-dom";
 import Nabebar from "./Shared/Nabebar";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Login = () => {
-
+    const { loginUser } = useContext(AuthContext)
     const hendelSubmit = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
+        loginUser(email, password)
+            .then(result => console.log(result.user))
+            .catch(error=> console.error(error))
     }
     return (
         <div>
-            <Nabebar/>
+            <Nabebar />
             <div className="py-26  bg-white font-Poppin">
                 <div className="container px-4 mx-auto">
                     <div className="max-w-lg mx-auto">
